@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14/9/24</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main" >
+        <div class="hero">
+            
+        </div>
+        <div class="lower">
+            <h3>Stay updated!</h3>
+            <p>Join 60,000+ product manager receiving monthly updates on:</p>
+            <ul>
+                <li>Product discovery and building what matters</li>
+                <li>Measuring to ensure updates are a success</li>
+                <li>And much more!</li>
+            </ul>
+            <div class="input">
+                <div class="top">
+                    <label for="userEmail">Email address</label>
+                    <h3>Valid email required</h3>
+                </div>
+                <input type="email" id="userEmail" placeholder="email@company.com" required>
+                <button>Subscribe to monthly newsletter</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="done hide">
+        <div class="text">
+            <img src="images/icon-success.svg" alt="">
+            <h2>Thanks for Subscribing!</h2>
+            <p>A confirmation email has been send to <span id="name"></span> . Please open it and click the button
+                insideto confirm youur subscription</p>
+        </div>
+        <div class="donelower">
+            <button onclick="reset()">Dismiss message</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

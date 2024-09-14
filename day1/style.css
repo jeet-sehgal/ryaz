@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.hero {
+    width: 100vw;
+    background-image: url(images/illustration-sign-up-mobile.svg);
+    height: 30lvh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0px 0px 10px 10px;
+}
+.lower{
+    
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center ; */
+    margin: auto;
+    gap: 3lvh;
+    margin-top: 3lvh;
+    width: 85vw;
+}
+.lower h3{
+    color: #1f253d;
+    font-size: 1.5em;
+}
+p,li{
+    font-size: .8em;
+}
+li{
+    list-style: none;
+   position: relative;
+   padding-left: 20px;
+}
+li::before{
+    content: "";
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background-image: url(images/icon-list.svg);
+    background-repeat: no-repeat;
+    background-size: 12px;
+    margin-right: 3vw;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: 1lvh;
+}
+label{
+    color: #1c1d2f;
+    font-size: 10px;
+    font-weight: 600;
+}
+input,button{
+    cursor: pointer;
+}
+input[type="email"]{
+    /* width: 60vw; */
+    border-radius: 3px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.484);
+}
+.input .top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.input .top h3{
+    color: red;
+    font-size: 10px;
+    visibility:hidden;
+}
+button{
+    background-color: #1f253d;
+    color: aliceblue;
+    padding: 10px 5px ;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    /* transition: all .4s; */
+}
+button:hover{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,84,118,1) 0%, rgba(255,103,62,1) 100%);
+}
+.done{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100lvh;
+    padding: 10lvh 10vw;
+    justify-content: space-between;
+}
+.done .text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.done .text h2{
+    color: #1f253d;
+    font-size: 30px;
+} 
+.done .text img{
+    width: 20vw;
+}
+.done .donelower button{
+ width: 100%;
+}
+.hide{
+    display: none;
+}
+.error{
+    background-color: rgba(255, 0, 0, 0.146);
+}
+.error::placeholder{
+    color: red;
+}
+@media screen and (min-width:426px){
+    body{
+        background-color: #36384d;
+        display: flex;
+        height: 100lvh;
+        justify-content: center;
+        align-items: center;
+    }
+    .main{
+        background-color: aliceblue;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 20px;
+       width: 80lvh;
+       border-radius: 10px;
+       padding: 10px;
+       padding-left: 40px;
+       
+    }
+    
+    .hero{
+        order: 2;
+        background-image: url(images/illustration-sign-up-desktop.svg);
+        border-radius: 10px ;
+        width: 50vw;
+        height: 45lvh;
+        background-size: cover ;
+
+    }
+    .lower h3{
+        font-size:35px ;
+    }
+    .hide{
+        display: none;
+    }
+    .done{
+        background-color: aliceblue;
+        width: 50vw;
+        height: fit-content;
+        padding: 20px 0;
+        border-radius: 10px; 
+    }
+    .done .text{
+        width: 40vw;
+        /* align-items: center; */
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .done .text img{
+        width: 7vw;
+
+    }
+    .donelower{
+        margin: 0 auto;
+        width: 80%;
+    }
+}
