@@ -140,7 +140,7 @@ button:hover{
        align-items: center;
        justify-content: center;
        gap: 20px;
-       width: 80lvh;
+       width: 45vw;
        border-radius: 10px;
        padding: 10px;
        padding-left: 40px;
@@ -152,31 +152,43 @@ button:hover{
         background-image: url(images/illustration-sign-up-desktop.svg);
         border-radius: 10px ;
         width: 50vw;
-        height: 45lvh;
+        height: 60lvh;
         background-size: cover ;
 
     }
+    input{
+        font-size: 15px;
+    }
+    button{
+        font-size: 15px;
+    }
+    .lower{
+        width: 60vw;
+    }
     .lower h3{
-        font-size:35px ;
+        font-size:38px ;
+    }
+    .lower p,.lower li{
+        font-size: 17px;
     }
     .hide{
         display: none;
     }
     .done{
         background-color: aliceblue;
-        width: 50vw;
+        width: 30vw;
         height: fit-content;
         padding: 20px 0;
         border-radius: 10px; 
     }
     .done .text{
-        width: 40vw;
+        width: 27vw;
         /* align-items: center; */
         margin: 0 auto;
         margin-top: 20px;
     }
     .done .text img{
-        width: 7vw;
+        width: 5vw;
 
     }
     .donelower{
