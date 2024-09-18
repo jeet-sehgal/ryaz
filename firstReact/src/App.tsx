@@ -1,4 +1,4 @@
-import Cof from './Coffee.jsx'
+import Cof from './Coffee'
 function App() {
   
 
