@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
   const [length, setLength] = useState(8);
   const [number, setNumber] = useState(false);
   const [char, setChar] = useState(false);
-  let passGen=() => {
+  let passGen = () => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (number) str += "1234567890";
@@ -14,19 +14,24 @@ function App() {
     for (let i = 0; i < length; i++) {
       pass += str.charAt(Math.floor(Math.random() * str.length + 1));
     }
-    console.log(pass);
-    
+
     setPassword(pass);
   };
+  const passRef = useRef(null);
   useEffect(passGen, [length, number, char]);
-  
+  const copy = () => {
+    window.navigator.clipboard.writeText(password);
+    passRef.current.select()
+  };
   return (
     <div className="container">
-      <h1><span>Password</span> Generater</h1>
+      <h1>
+        <span>Password</span> Generater
+      </h1>
       <div className="main">
         <div className="top">
-          <input type="text" readOnly value={password} />
-          <button>copy</button>
+          <input type="text" readOnly value={password} ref={passRef} />
+          <button onClick={copy}>copy</button>
         </div>
         <div className="lower">
           <div>
