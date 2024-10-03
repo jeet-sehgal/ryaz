@@ -1,37 +1,41 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
   const [meaning, setMeaning] = useState("");
   const [word, setWord] = useState("");
+  const [input, setInput] = useState("");
+  const [errorDiv, setErrorDiv] = useState(false);
+  const [correctDiv, setCorrectDiv] = useState(false);
+
   const call = async () => {
-    let means = await fetch(
-      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-    ).then((res) => res.json());
-    setMeaning(means[0].meanings[0].definitions[0].definition);
+    try {
+      setLoading(true)
+      setWord(input);
+      let means = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`
+      ).then((res) => res.json());
+      setMeaning(means[0].meanings[0].definitions[0].definition);
+      setErrorDiv(false);
+      setCorrectDiv(true);
+    } catch {
+      setErrorDiv(true);
+      setCorrectDiv(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  return (
-    <>
-      <div className="main">
-        <h1>Dictionary</h1>
-        <input
-          type="text"
-          placeholder="Enter your word"
-          value={word}
-          onChange={(e) => {
-            setWord(e.target.value);
-          }}
-        />
-        <br />
-        <button onClick={call}>Meaning</button>
+  function Error() {
+    return (
+      <div className="error">
+        <h3 style={{ color: "red" }}>Word Not Found</h3>
       </div>
-      <div className="resultContainer">
-        <div className="error">
-          <h3 style={{ color: "red" }}>Word Not Found</h3>
-        </div>
+    );
+  }
+  function Correct() {
+    return (
+      <div className="correct">
         <span className="word">
           <h3>{word}</h3>
         </span>
@@ -39,6 +43,28 @@ function App() {
         <span className="meaning">
           <h5>{meaning}</h5>
         </span>
+      </div>
+    );
+  }
+  
+  return (
+    <>
+      <div className="main">
+        <h1>Dictionary</h1>
+        <input
+          type="text"
+          placeholder="Enter your word"
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
+        />
+        <br />
+        <button onClick={call}>Meaning</button>
+      </div>
+      <div className="resultContainer">
+        {errorDiv ? <Error /> : null}
+        {correctDiv ? <Correct /> : null}
       </div>
     </>
   );
