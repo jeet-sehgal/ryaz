@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    background-color: aqua;
+    margin-bottom: .5rem;
+}
+.container div{
+    display: flex;
+    flex-direction: column;
+}
+input[type=number]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+}
