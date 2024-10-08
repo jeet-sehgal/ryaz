@@ -10,7 +10,6 @@ function App() {
 
   const call = async () => {
     try {
-      setLoading(true)
       setWord(input);
       let means = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`
@@ -21,8 +20,6 @@ function App() {
     } catch {
       setErrorDiv(true);
       setCorrectDiv(false);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -46,7 +43,7 @@ function App() {
       </div>
     );
   }
-  
+
   return (
     <>
       <div className="main">
