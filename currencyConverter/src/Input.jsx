@@ -1,6 +1,6 @@
 import "./Input.css"
 
-export default function Input({label,disable=false,currency,value=0,valueChange}){
+export default function Input({label,disable=false,currency,value,valueChange,setCurrency,options=[]}){
    
     
     return(
@@ -8,12 +8,12 @@ export default function Input({label,disable=false,currency,value=0,valueChange}
         <div className="container">
             <div>
             <label htmlFor="count">{label}</label>
-            <input type="number" id="count" value={value} onChange={(e)=>valueChange(e.target.value)} disabled={disable} />
+            <input type="number" id="count" value={value} onChange={(e)=>valueChange(Number(e.target.value))} disabled={disable} />
             </div>
             <div>
             <label htmlFor="options">Currency Type</label>
-            <select id="options">
-                <option >{currency}</option>
+            <select id="options" value={currency} onChange={(e)=>setCurrency(e.target.value)}>
+                {options.map(ele=><option key={ele} value={ele}>{ele}</option>)}
             </select>
             </div>
         </div>

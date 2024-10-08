@@ -6,10 +6,12 @@
     align-items: center;
     background-color: aqua;
     margin-bottom: .5rem;
+    border-radius: 5px;
 }
 .container div{
     display: flex;
     flex-direction: column;
+    gap: .4rem;
 }
 input[type=number]{
     background-color: transparent;
