@@ -8,7 +8,8 @@ function App() {
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
   const [options, setOptions] = useState([]);
-  const [result,setResult]=useState(0);
+  const [result, setResult] = useState(0);
+  const [call, setCall] = useState(true);
   useEffect(() => {
     fetch(
       `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${from}.json`
@@ -19,11 +20,23 @@ function App() {
         setOptions(Object.keys(res[from]));
       });
   }, [from]);
-  useEffect(convert,[to,value,setFrom])
-  function convert(){
-    setResult(value * data[to])
-  }
+  useEffect(convert, [to, value, from]);
+  function convert() {
+    if (call) {
+      setResult(Number(value * data[to]));
+    } else {
+      setCall(true);
+    }
 
+    // console.log(typeof(result))
+  }
+  function swap() {
+    setCall(false);
+    setFrom(to);
+    setTo(from);
+    setValue(result);
+    setResult(value);
+  }
   return (
     <div
       style={{ position: "relative", width: "fit-content", marginLeft: "10px" }}
@@ -39,8 +52,7 @@ function App() {
       <button
         id="swap"
         onClick={() => {
-          console.log(data);
-          console.log(from);
+          swap();
         }}
       >
         swap
@@ -49,10 +61,9 @@ function App() {
         label="To"
         currency={to}
         disable={true}
-        
+        value={result}
         setCurrency={setTo}
         options={options}
-        value={result}
       />
       <button onClick={convert}>
         Convert {from.toUpperCase()} To {to.toUpperCase()}
