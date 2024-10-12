@@ -3,21 +3,23 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import Home from "./components/Home"
 import About from "./components/About"
-import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import './index.css'
 
 const route=createBrowserRouter([
   {path : "/",
-    element :  <Home />,
+    element : <><App /><Home /></> ,
   },
   {path : "/about",
-    element :  <About />,
+    element : <><App /><About /></>,
   },
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+   <>
     <App />
-    {/* <RouterProvider route={route}></RouterProvider> */}
+    <RouterProvider router={route} />
+    </>
   </StrictMode>,
 )
