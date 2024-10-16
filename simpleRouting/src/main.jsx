@@ -1,14 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import Footer from "./Footer.jsx"
 import Home from "./components/Home";
 import Categories from "./components/Categories.jsx";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import Param from "./components/Param";
+import GitHub,{load} from "./components/GitHub.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Layout from "./layout.jsx";
+
 
 const route = createBrowserRouter([
   {
@@ -33,6 +34,15 @@ const route = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        loader:load,
+        path:"/github",
+        element:<GitHub />,
+      },
+      {
+        path:"/user/:id",
+        element:<Param />
+      }
     ]
   }
 ]);

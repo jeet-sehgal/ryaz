@@ -42,6 +42,15 @@ function App() {
             Categories
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/github"
+            className={({ isActive }) => (isActive ? "jeet" : "inactive")}
+            end
+          >
+            GitHub
+          </NavLink>
+        </li>
       </ul>
       <div className="buttons">
       <button style={{color:"rgb(26, 211, 63)", backgroundColor:"white"}}>Log In</button>
