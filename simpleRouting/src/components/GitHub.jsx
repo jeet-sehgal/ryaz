@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 export default function GitHub() {
-  let data = useLoaderData();
+  let data1 = useLoaderData();
 
   return (
     <div
@@ -14,9 +14,9 @@ export default function GitHub() {
       }}
     >
       
-      <h2>Github followers : {data.followers}</h2>
+      <h2>Github followers : {data1.followers}</h2>
       <img
-        src={data.avatar_url}
+        src={data1.avatar_url}
         alt=""
         width="100px"
         height="100px"
