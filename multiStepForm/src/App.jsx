@@ -1,34 +1,37 @@
-import './App.css'
-import {NavLink} from "react-router-dom"
+import "./App.css";
+import { NavLink } from "react-router-dom";
 
 function App() {
-  
   return (
     <>
       <ul>
-        <li>
-          <NavLink className={({isActive})=>isActive?"active":""} to="/">
-            1
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({isActive})=>isActive?"active":""} to="/">
-            2
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({isActive})=>isActive?"active":""} to="/">
-            3
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({isActive})=>isActive?"active":""} to="/home">
-            4
-          </NavLink>
-        </li>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/one"
+        >
+          <li>1</li>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/two"
+        >
+          <li>2</li>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/three"
+        >
+          <li>3</li>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/forth"
+        >
+          <li>4</li>
+        </NavLink>
       </ul>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
