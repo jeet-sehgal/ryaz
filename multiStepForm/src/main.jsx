@@ -1,21 +1,39 @@
-import { StrictMode } from "react";
+import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout.jsx";
 import MainComp from "./components/MainComp.jsx";
+import OneChild from "./components/OneChild.jsx";
+import ThirdChild from "./components/ThirdChild.jsx";
+
+function One() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phno, setPhno] = useState("");
+  return (
+    <OneChild
+      name={name}
+      setName={setName}
+      phone={phno}
+      setPhone={setPhno}
+      email={email}
+      setEmail={setEmail}
+    />
+  );
+}
 const route = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/one",
+        path: "/",
         element: (
           <MainComp
             heading={"Personal Info"}
             desc={"please provide your name, email, address, phone number"}
+            child={<One />}
           />
         ),
       },
@@ -34,6 +52,7 @@ const route = createBrowserRouter([
           <MainComp
             heading={"Pick add-ons"}
             desc={"Add-ons help to enhance your gaming experience."}
+            child={<ThirdChild />}
           />
         ),
       },

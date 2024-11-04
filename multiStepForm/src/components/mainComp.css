@@ -2,5 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: blue;
+    font-family: arial;
+}
+.subHeading{
+    color: hsl(213, 96%, 18%);
+
+}
+.subPara{
+    color: rgba(128, 128, 128, 0.65);
+}
+.fInput{
+    padding: 7px 5px ;
+    width: 20vw;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.fInput:focus{
+    outline: 1px solid blue;
+}
+.first{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 40lvh;
+}
+label{
+    color: hsl(213, 96%, 18%);
+    font-weight: 400;
+}
+#addOns:focus{
+    outline:1px solid hsl(213, 96%, 18%);
 }

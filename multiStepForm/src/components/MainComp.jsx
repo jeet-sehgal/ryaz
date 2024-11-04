@@ -1,14 +1,14 @@
-import React from 'react'
-import "./mainComp.css"
+import React from "react";
+import "./mainComp.css";
 
-function MainComp({heading=null,desc=null,child=null}) {
+function MainComp({ heading = null, desc = null, child = null }) {
   return (
     <>
-        <h3>{heading}</h3>
-        <p>{desc}</p>
-        {child}
+      <h3 className="subHeading">{heading}</h3>
+      <p className="subPara">{desc}</p>
+      {child}
     </>
-)
+  );
 }
 
-export default MainComp
+export default MainComp;
