@@ -1,8 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function OneChild({name,setName,email,setEmail,phone,setPhone}) {
-  
+  let [to,setTo] = useState("/")
+  function verify(){
+    if(!(name=="")&&(phone.toString().length==10)){
+      setTo="/two"
+    }
+    else{
+      // cons)
+    }
+   
+  }
   return (
     <div className="first">
       <div>
@@ -41,6 +51,7 @@ function OneChild({name,setName,email,setEmail,phone,setPhone}) {
         }}
       />
       </div>
+      <button onClick={verify}><NavLink to={to}>next</NavLink></button>
     </div>
   );
 }

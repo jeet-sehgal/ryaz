@@ -4,8 +4,8 @@ function ThirdChild({data1=null,data2=null,data3=null}) {
   return (
     <div>
       <div>
-        <input type="checkbox" name="addOns" id="addOns" />
-        <label htmlFor="addOns">
+        <input type="checkbox" name="addOns" id="addOns1" />
+        <label htmlFor="addOns1">
           <div className="data">
             <div className="head">Online service</div>
             <div className="detail">Access to multiplyer games </div>
@@ -14,8 +14,8 @@ function ThirdChild({data1=null,data2=null,data3=null}) {
         </label>
       </div>
       <div>
-        <input type="checkbox" name="addOns" id="addOns" />
-        <label htmlFor="addOns">
+        <input type="checkbox" name="addOns" id="addOns2" />
+        <label htmlFor="addOns2">
           <div className="data">
             <div className="head">Larger storage</div>
             <div className="detail">Extra 1TB cloud save</div>
@@ -24,8 +24,8 @@ function ThirdChild({data1=null,data2=null,data3=null}) {
         </label>
       </div>
       <div>
-        <input type="checkbox" name="addOns" id="addOns" />
-        <label htmlFor="addOns">
+        <input type="checkbox" name="addOns" id="addOns3" />
+        <label htmlFor="addOns3">
           <div className="data">
             <div className="head">Customizable profile</div>
             <div className="detail">Custom theme on your profile </div>
