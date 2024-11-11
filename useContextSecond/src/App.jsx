@@ -1,6 +1,7 @@
 
 import './App.css'
 import Card from './context/components/card'
+import CardSec from './context/components/CardSec'
 import { DataProvider } from './context/DataContext'
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
 
   return (
     <DataProvider value={{user,password}}>
+      <CardSec />
+      {user}
       <Card />
     </DataProvider>
   )
