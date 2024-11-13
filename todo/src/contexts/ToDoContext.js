@@ -5,7 +5,7 @@ export const ToDoContext = createContext({
   addTodo: (todo) => {},
   updateToDo: (id, todo) => {},
   deleteToDo: (id) => {},
-  checkBox: () => {},
+  checkBox: (id) => {},
 });
 export const ToDoProvider = ToDoContext.Provider;
 
