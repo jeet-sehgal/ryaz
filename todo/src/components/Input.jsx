@@ -7,6 +7,7 @@ function Input() {
   const add = () => {
     if (!inputValue) return;
     else addTodo({todo:inputValue,completed:false})
+    setInputValue("")
   };
   return (
     <>
@@ -16,8 +17,10 @@ function Input() {
         onChange={(e) => {
           setInputValue(e.target.value);
         }}
+        placeholder="write todo..."
+        onKeyDown={(e)=>{if(e.key=="Enter") add()}}
       />
-      <button onClick={add}>Add</button>
+      <button onClick={add} id="add">Add</button>
     </>
   );
 }
