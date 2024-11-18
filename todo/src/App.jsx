@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Input from "./components/Input";
 import { ToDoProvider } from "./contexts/ToDoContext";
@@ -22,6 +22,18 @@ function App() {
   const updateToDo = (id, todo) => {
     setTodos(todos.map((ele) => (ele.id == id ? { ...ele, todo: todo } : ele)));
   };
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todos"))
+
+    if (todos && todos.length > 0) {
+      setTodos(todos)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }, [todos])
+  
   return (
     <ToDoProvider value={{ todos, addTodo, checkBox, updateToDo, deleteToDo }}>
       <h1>TO DO....</h1>
