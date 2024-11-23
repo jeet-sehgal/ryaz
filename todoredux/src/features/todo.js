@@ -13,10 +13,13 @@ const todoSlice = createSlice({
                 text : action.payload,
                 id : nanoid()
             }
-            state.todos.push(todo)
+            state.todos.unshift(todo)
+        },
+        reduce:(state,action)=>{
+            state.todos=state.todos.filter(ele=>ele.id!=action.payload)
         }
     }
 })
 
-export const {add} = todoSlice.actions
+export const {add,reduce} = todoSlice.actions
 export default todoSlice.reducer

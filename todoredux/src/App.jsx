@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <h1>hoiiiiii</h1>
+      <h1 style={{display:"inline"}}>TO DO</h1><sub>never ends</sub> 
       <Form />
       <List />
     </Provider>

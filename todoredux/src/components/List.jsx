@@ -1,20 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-
+import { useSelector,useDispatch } from 'react-redux'
+import { reduce } from '../features/todo';
 
 function List() {
-    const todo=useSelector(state=>state.todos)
+    const todo=useSelector(state=>state.todos);
+    const dispatch= useDispatch()
   return (
-    <div>
+    <ol>
         {todo.map(ele=>{
             return (
             <li key={ele.id}>
                 {ele.text}
-                {console.log(ele.text)}
+                <button id='re'onClick={()=>{dispatch(reduce(ele.id))}}>X</button>
             </li>)
         })}
-        {console.log(todo)}
-    </div>
+        
+    </ol>
   )
 }
 
